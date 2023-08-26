@@ -1,0 +1,12 @@
+.button{
+    padding: 15px 25px;
+    border: none;
+    background: darkorchid;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all .3s ease;
+}
+.button:hover{
+
+}
