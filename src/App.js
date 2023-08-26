@@ -1,11 +1,17 @@
 import React from 'react';
-import UserForm from "./components/UserForm/UserForm";
+import AddUser from "./components/Users/AddUser";
 
 
 function App() {
+    const addUserHandler = user => {
+        const newUser = {
+            ...user
+        }
+        console.log(newUser)
+    }
   return (
     <div>
-      <UserForm />
+      <AddUser onAddUser={addUserHandler} />
     </div>
   );
 }
