@@ -1,17 +1,27 @@
-import React from 'react';
+import React, {useState} from 'react';
 import AddUser from "./components/Users/AddUser";
+import UsersList from "./components/Users/UsersList";
 
 
 function App() {
+    const [enteredUser, setEnteredUser] = useState([]);
+
     const addUserHandler = user => {
-        const newUser = {
-            ...user
-        }
-        console.log(newUser)
+        setEnteredUser((prevUser) => {
+            return [...prevUser, user]
+        })
+    }
+
+    let userslist = <p style={{color:"white", textAlign:"center"}}>No entered users yet!</p>
+    if (enteredUser.length > 0){
+        userslist = (
+            <UsersList users={enteredUser} />
+        );
     }
   return (
     <div>
       <AddUser onAddUser={addUserHandler} />
+        {userslist}
     </div>
   );
 }
